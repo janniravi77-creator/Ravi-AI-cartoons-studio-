@@ -1,190 +1,381 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Ravi AI Cartoon Studio</title>
+<title>Ravi AI Cartoon Studio</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+<style>
+* {
+  box-sizing: border-box;
+}
 
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #101126;
-      color: white;
-      line-height: 1.6;
-    }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #101126;
+  color: white;
+  line-height: 1.6;
+}
 
-    header {
-      text-align: center;
-      padding: 28px 15px;
-      background: #191a3b;
-      border-bottom: 2px solid #ffd166;
-    }
+header {
+  text-align: center;
+  padding: 28px 15px;
+  background: #191a3b;
+  border-bottom: 2px solid #ffd166;
+}
 
-    header h1 {
-      color: #ffd166;
-      font-size: 28px;
-      margin: 0 0 8px;
-    }
+header h1 {
+  color: #ffd166;
+  font-size: 28px;
+  margin: 0 0 8px;
+}
 
-    header p {
-      margin: 0;
-      color: #ddddf5;
-    }
+header p {
+  margin: 0;
+  color: #ddddf5;
+}
 
-    .container {
-      width: 92%;
-      max-width: 650px;
-      margin: 25px auto;
-    }
+.container {
+  width: 92%;
+  max-width: 650px;
+  margin: 25px auto;
+}
 
-    .card {
-      background: #202143;
-      padding: 22px;
-      border-radius: 18px;
-      border: 1px solid #44456b;
-    }
+.card {
+  background: #202143;
+  padding: 22px;
+  border-radius: 18px;
+  border: 1px solid #44456b;
+  margin-bottom: 20px;
+}
 
-    h2 {
-      color: #ffd166;
-      margin-top: 0;
-    }
+h2 {
+  color: #ffd166;
+  margin-top: 0;
+}
 
-    label {
-      display: block;
-      margin: 18px 0 8px;
-      font-weight: bold;
-    }
+label {
+  display: block;
+  margin: 18px 0 8px;
+  font-weight: bold;
+}
 
-    textarea,
-    select,
-    input {
-      display: block;
-      width: 100%;
-      padding: 13px;
-      border-radius: 10px;
-      border: 1px solid #64658b;
-      background: #11122c;
-      color: white;
-      font-size: 16px;
-    }
+textarea,
+select,
+input {
+  display: block;
+  width: 100%;
+  padding: 13px;
+  border-radius: 10px;
+  border: 1px solid #64658b;
+  background: #11122c;
+  color: white;
+  font-size: 16px;
+}
 
-    textarea {
-      min-height: 120px;
-      resize: vertical;
-    }
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
 
-    button {
-      width: 100%;
-      padding: 14px;
-      margin-top: 18px;
-      border: none;
-      border-radius: 12px;
-      background: #ffd166;
-      color: #17172b;
-      font-size: 16px;
-      font-weight: bold;
-      cursor: pointer;
-    }
+button {
+  width: 100%;
+  padding: 14px;
+  margin-top: 18px;
+  border: none;
+  border-radius: 12px;
+  background: #ffd166;
+  color: #17172b;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
 
-    button:hover {
-      background: #ffe09a;
-    }
+button:hover {
+  background: #ffe09a;
+}
 
-    .secondary {
-      background: #7778dd;
-      color: white;
-    }
+.secondary {
+  background: #7778dd;
+  color: white;
+}
 
-    #result {
-      margin-top: 22px;
-      padding: 15px;
-      border-radius: 12px;
-      background: #11122c;
-      border: 1px solid #64658b;
-      overflow-wrap: anywhere;
-    }
+#result {
+  margin-top: 22px;
+  padding: 15px;
+  border-radius: 12px;
+  background: #11122c;
+  border: 1px solid #64658b;
+  overflow-wrap: anywhere;
+}
 
-    #output {
-      white-space: pre-wrap;
-      overflow-wrap: anywhere;
-    }
+#output {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
 
-    .note {
-      color: #c7c8e7;
-      font-size: 14px;
-    }
+.note {
+  color: #c7c8e7;
+  font-size: 14px;
+}
 
-    footer {
-      text-align: center;
-      padding: 25px 12px;
-      color: #b8b9d8;
-    }
-  </style>
+footer {
+  text-align: center;
+  padding: 25px 12px;
+  color: #b8b9d8;
+}
+</style>
 </head>
 
 <body>
 
-  <header>
-    <h1>🎬 Ravi AI Cartoon Studio</h1>
-    <p>Bring Your Cartoon Ideas to Life!</p>
-  </header>
+<header>
+  <h1>🎬 Ravi AI Cartoon Studio</h1>
+  <p>Bring Your Cartoon Ideas to Life!</p>
+</header>
 
-  <main class="container">
-    <section class="card">
+<main class="container">
 
-      <h2>✨ Cartoon Prompt Generator</h2>
+<section class="card">
 
-      <p>
-        Create fun cartoon ideas and animation prompts
-        for your next video!
-      </p>
+<h2>✨ Cartoon Prompt Generator</h2>
 
-      <label for="idea">Enter Your Cartoon Idea</label>
+<p>
+Create fun cartoon ideas and animation prompts
+for your next video!
+</p>
 
-      <textarea
-        id="idea"
-        placeholder="Example: A cute baby elephant playing with colorful butterflies..."
-      ></textarea>
+<label for="idea">Enter Your Cartoon Idea</label>
 
-      <label for="style">Choose Cartoon Style</label>
+<textarea
+id="idea"
+placeholder="Example: A cute baby elephant playing with colorful butterflies..."
+></textarea>
 
-      <select id="style">
-        <option value="Cute 3D animated cartoon">
-          Cute 3D Cartoon
-        </option>
-        <option value="Pixar-inspired 3D animation">
-          Pixar-Inspired 3D
-        </option>
-        <option value="Colorful nursery rhyme animation">
-          Nursery Rhyme
-        </option>
-        <option value="Cute anime cartoon">
-          Anime Cartoon
-        </option>
-        <option value="2D cartoon animation">
-          2D Cartoon
-        </option>
-      </select>
+<label for="style">Choose Cartoon Style</label>
 
-      <label for="mood">Choose Mood</label>
+<select id="style">
+<option value="Cute 3D animated cartoon">Cute 3D Cartoon</option>
+<option value="Pixar-inspired 3D animation">Pixar-Inspired 3D</option>
+<option value="Colorful nursery rhyme animation">Nursery Rhyme</option>
+<option value="Cute anime cartoon">Anime Cartoon</option>
+<option value="2D cartoon animation">2D Cartoon</option>
+</select>
 
-      <select id="mood">
-        <option value="happy and cheerful">
-          Happy
-        </option>
-        <option value="funny and playful">
-          Funny
-        </option>
-        <option value="magical and adventurous">
-          Magical
-        </option>
-        <option value="sweet and heartwarming">
-          Heartwarming
-        </option>
+<label for="mood">Choose Mood</label>
+
+<select id="mood">
+<option value="happy and cheerful">Happy</option>
+<option value="funny and playful">Funny</option>
+<option value="magical and adventurous">Magical</option>
+<option value="sweet and heartwarming">Heartwarming</option>
+</select>
+
+<label for="ratio">Video Aspect Ratio</label>
+
+<select id="ratio">
+<option value="16:9 widescreen">16:9 YouTube Video</option>
+<option value="9:16 vertical">9:16 YouTube Shorts</option>
+<option value="1:1 square">1:1 Square Video</option>
+</select>
+
+<button onclick="generatePrompt()">
+🚀 Generate Cartoon Prompt
+</button>
+
+<div id="result" style="display:none;">
+
+<h2>🎨 Your Generated Prompt</h2>
+
+<div id="output"></div>
+
+<button class="secondary" onclick="copyPrompt()">
+📋 Copy Prompt
+</button>
+
+</div>
+
+</section>
+
+<section class="card">
+
+<h2>🎬 Scene Generator</h2>
+
+<p>
+Create a simple scene-by-scene animation plan
+for your cartoon story.
+</p>
+
+<button onclick="generateScenes()">
+🎥 Generate Scenes
+</button>
+
+<div id="sceneResult" style="display:none;">
+
+<h2>📽️ Your Cartoon Scenes</h2>
+
+<div id="sceneOutput"></div>
+
+<button class="secondary" onclick="copyScenes()">
+📋 Copy Scenes
+</button>
+
+</div>
+
+</section>
+
+<section class="card">
+
+<h2>ℹ️ About Ravi AI Cartoon Studio</h2>
+
+<p>
+Create cartoon ideas, animation prompts and scene descriptions
+for your YouTube videos.
+</p>
+
+<p class="note">
+Note: AI image and video generation requires a connection
+to an external AI service.
+</p>
+
+</section>
+
+</main>
+
+<footer>
+<p>© 2026 Ravi AI Cartoon Studio</p>
+</footer>
+
+<script>
+
+let generatedPrompt = "";
+let generatedScenes = "";
+
+function generatePrompt() {
+
+  const idea = document.getElementById("idea").value.trim();
+
+  const style = document.getElementById("style").value;
+
+  const mood = document.getElementById("mood").value;
+
+  const ratio = document.getElementById("ratio").value;
+
+  if (!idea) {
+    alert("Please enter your cartoon idea first!");
+    return;
+  }
+
+  generatedPrompt = `
+Create a beautiful animated cartoon based on this idea:
+
+${idea}
+
+Animation Style:
+${style}
+
+Mood:
+${mood}
+
+Visual Details:
+Bright pastel colors, soft cinematic lighting,
+rounded character designs, expressive eyes,
+cheerful facial expressions, beautiful backgrounds,
+smooth animation, child-friendly visuals.
+
+Character Design:
+Keep all characters visually consistent
+throughout the entire animation.
+
+Video Format:
+${ratio}
+
+Quality:
+High quality, detailed 3D animation,
+professional cartoon production.
+No text, no watermark.
+`;
+
+  document.getElementById("output").textContent =
+    generatedPrompt;
+
+  document.getElementById("result").style.display = "block";
+}
+
+function generateScenes() {
+
+  const idea = document.getElementById("idea").value.trim();
+
+  const style = document.getElementById("style").value;
+
+  if (!idea) {
+    alert("Please enter your cartoon idea first!");
+    return;
+  }
+
+  generatedScenes = `
+CARTOON STORY SCENE PLAN
+
+Main Story:
+${idea}
+
+Animation Style:
+${style}
+
+SCENE 1 - INTRODUCTION
+Introduce the main character.
+Show a beautiful colorful background.
+Use a wide cinematic camera shot.
+
+SCENE 2 - STORY BEGINNING
+Show the main character starting the adventure.
+Use expressive facial movements.
+
+SCENE 3 - FUN MOMENT
+Show a funny or exciting moment.
+Use smooth character animation.
+
+SCENE 4 - MAIN ACTION
+Show the most important event in the story.
+Use dynamic camera movements.
+
+SCENE 5 - HAPPY ENDING
+Show the characters smiling and celebrating.
+Finish with a cheerful cinematic ending.
+
+IMPORTANT:
+Maintain the same character appearance,
+colors, clothing and animation style in every scene.
+`;
+
+  document.getElementById("sceneOutput").textContent =
+    generatedScenes;
+
+  document.getElementById("sceneResult").style.display = "block";
+}
+
+function copyPrompt() {
+
+  if (!generatedPrompt) return;
+
+  navigator.clipboard.writeText(generatedPrompt)
+    .then(() => alert("Prompt copied successfully!"))
+    .catch(() => alert("Copy failed. Please select and copy manually."));
+}
+
+function copyScenes() {
+
+  if (!generatedScenes) return;
+
+  navigator.clipboard.writeText(generatedScenes)
+    .then(() => alert("Scenes copied successfully!"))
+    .catch(() => alert("Copy failed. Please select and copy manually."));
+}
+
+</script>
+
+</body>
+</html>
      
